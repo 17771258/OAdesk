@@ -1,0 +1,127 @@
+html,body{ position:relative; width:100%; height:100%; overflow:hidden;z-index:0;}
+/*
+ *	z-index说明
+ *	第一层 1壁纸 2桌面 3加载进度 4锁屏
+ *	壁纸层 1壁纸 2遮罩
+ *	桌面层 1应用 2弹窗 3任务栏
+ */
+/********通用********/
+#maskdesk{z-index:9999999; display:none; cursor:default;background:transparent none; width:100%;height:100%;position:absolute;top:0;left:0}
+#loading, #desk, #wallpaper,
+#wallpaper_bac, #wallpaper iframe{
+	 position:absolute; top:0; left:0; width:100%; height:100%; overflow:hidden;
+}
+/********锁屏********/
+/********加载********/
+#loading{ z-index:3; display:none;}
+
+/********桌面********/
+#desk{ z-index:2; cursor:default;}
+#desktop{position:relative; z-index:1;}
+
+
+/****大图标****/
+.appbtn_1{position:absolute; float:left; width:80px; height:80px; padding:5px; overflow:hidden; z-index:1;}
+.appbtn_1.hover,
+.appbtn_1.click{ background:url(images/desktop.png) no-repeat 0 0;}
+.appbtn_1 .icon{float:left; width:48px; height:48px;padding:4px 16px 3px 16px;}
+.appbtn_1 .icon img{width:48px; height:48px;}
+.appbtn_1 .name{float:left; display:block; width:70px; text-align:center; margin:0 5px; background:url(images/desktop.png) no-repeat 0 -100px; color:#FFF;}
+/****小图标****/
+.appbtn_2{position:absolute; float:left; width:60px; height:60px; padding:5px; overflow:hidden; z-index:1;}
+.appbtn_2.hover, .appbtn_2.click{ background:url(images/desktop.png) no-repeat 0 -120px ;}
+.appbtn_2 .icon{float:left; width:36px; height:36px; padding:3px 12px 1px 12px;}
+.appbtn_2 .icon img{width:36px; height:36px;}
+.appbtn_2 .name{float:left;display:block; width:60px; text-align:center; color:#333;}
+.appbtn_2.hover .name, .appbtn_2.click .name{color:#FFF;}
+/****右键菜单****/
+.popup_menu,
+.popup_menu_sub{width:127px;background:#F8F8F8; border:1px solid #AAA; position:absolute; text-align:left;font-family:"宋体"; z-index:9999;}
+.popup_menu .popup_menu_sub{ display:none; z-index:3;}
+.popup_menu li.hover .popup_menu_sub{ display:block;}
+.popup_menu ul{ width:125px;background:url(images/popupmenu.png) repeat-y 0 0; border:1px solid #FFF;}
+.popup_menu li{ width:125px; position:relative; z-index:2;}
+.popup_menu li.line{ border-bottom:1px solid #E8E8E8;}
+.popup_menu li.hover{background:#3B7CE6;}
+.popup_menu li span{ display:block; width:95px; padding-left:30px; height:23px; line-height:23px; text-decoration:none; color:#333; padding-top:1px;}
+.popup_menu li.hover li span{color:#333;}
+.popup_menu li.hover span,
+.popup_menu li.hover li.hover span{color:#FFF;}
+.popup_menu li b.icon{ display:block; width:25px; height:24px; overflow:hidden; position:absolute; top:0; left:0; background:url(images/popupmenu.png) no-repeat -50px 0;}
+.popup_menu li b.icon.hassubmenu{left:100px; background-position:-150px 0;}
+.popup_menu li.hover b.icon.hassubmenu{left:100px; background-position:-175px 0;}
+.popup_menu li b.icon.addnewfolder{ background-position:-200px 0;}
+.popup_menu li b.icon.addnewfile{ background-position:-225px 0;}
+.popup_menu li b.icon.addnewapp{ background-position:-350px 0;}
+.popup_menu li b.icon.themes{ background-position:-250px 0;}
+.popup_menu li b.icon.lockscreen{ background-position:-275px 0;}
+.popup_menu_sub li b.icon.now{ background-position:-300px 0;}
+.popup_menu li b.icon.delete{ background-position:-325px 0;}
+
+/********背景********/
+#wallpaper,
+#wallpaper iframe{ z-index:1;}
+#wallpaper iframe.iframe_mask{ z-index:2;filter:alpha(opacity=0);moz-opacity:0;opacity:0;}
+
+/****任务栏****/
+#taskbar{position:relative; background:url(images/taskbar.png) repeat-x 0 0; z-index:3;}
+#taskbar_main{height:33px; margin:0 140px 0 36px; padding-top:2px;}
+p#taskbar_right{ display:inline-block; height:20px; position:absolute; right:0; top:10px;}
+p#taskbar_right span{display:block; height:20px; overflow:hidden; float:left;}
+span#taskbar_show_time{color:#FFF; width:110px; padding:0 5px;}
+span#taskbar_msg_img{ width:20px;}
+/**开始菜单**/
+#start_menu_btn{display:block; width:20px; height:20px; 
+				position:absolute; top:8px; left:8px; 
+				background:url(images/start_menu.png) no-repeat -300px -40px;}
+#start_menu_btn.click, #start_menu_btn.hover{ background-position:-320px -40px;}
+#start_menu{position:absolute; bottom:35px; left:0; width:360px;}
+#start_menu_t, 
+#start_menu_d{width:360px; height:15px; overflow:hidden; background:url(images/start_menu.png) no-repeat 0 0;}
+#start_menu_d{background-position: 0 -20px;}
+#start_menu_m{width:360px; background:url(images/start_menu.png) repeat-y -360px 0;}
+#start_menu_list{ width:190px; padding:0 9px 0 16px; float:left;}
+#start_menu_list li{width:180px; float:left; height:30px; padding:3px 5px;}
+#start_menu_list li.hover{background:url(images/start_menu.png) no-repeat -100px -70px;}
+#start_menu_list li div.icon{width:30px; height:30px; float:left;}
+#start_menu_list li span.name{display:block; padding-left:10px; 
+								height:28px; line-height:28px; padding-top:2px; float:left; color:#000;}
+#start_menu_user{position:relative; width:135px; padding:23px 0 0 0; float:left;}
+#user_head{ position:absolute; width:46px; height:46px; padding:11px; 
+			background:url(images/start_menu.png) no-repeat 0 -40px; top:-45px; right:35px;}
+#user_head_mask{position:absolute; top:11px; left:11px; width:46px; height:25px; 
+				background:url(images/start_menu.png) no-repeat -80px -40px;}
+#user_info p{color:#CCC;}
+p#user_sign{color:#999; text-indent:1em;}
+p#user_sign span.editor{color:#0066FF; display:none;}
+/**任务栏列表**/
+#task_prev,
+#task_content,
+#task_next{height:33px; float:left;}
+#task_prev,#task_next{width:20px; background:url(images/start_menu.png) no-repeat -260px -110px;margin-left:-100%; display:none;}
+#task_next{margin-left:-20px;  background-position:-300px -110px;}
+#task_prev.hover{ background-position:-280px -110px;}
+#task_next.hover{ background-position:-320px -110px;}
+#task_content{width:100%;}
+#task_con{margin:0 20px; height:33px; overflow:hidden; position:relative;}
+
+#task_con_list{ position:absolute; top:0; left:0;}
+#task_con_list li{width:120px; height:33px; background:url(images/start_menu.png) no-repeat 0 -110px; float:left;}
+#task_con_list li.now,
+#task_con_list li.focus{background-position:-130px -110px;}
+#task_con_list li div.icon{width:20px; height:20px; float:left; padding:7px 6px 6px 13px; color:#000;}
+
+#task_con_list li span.name{display:block; height:33px; float:left; line-height:33px; max-width:80px; overflow:hidden;}
+#task_con_list li.now span.name,
+#task_con_list li.focus span.name{color:#FFF;}
+/**锁屏**/
+#lockscreen,
+#lockscreen_Bg{position:absolute; width:100%; height:100%; top:0; left:0;}
+#lockscreen{ z-index:4;}
+#lockscreen_Bg{ background:#000; filter:alpha(Opacity=40);-moz-opacity:0.4;opacity:0.4; z-index:0;}
+#lockscreenPanel{position:absolute; top:50%; left:50%; margin:-135px 0 0 -120px; width:240px; height:270px; z-index:1;}
+#lockscreen_Msg{width:240px; height:30px; line-height:30px; font-size:15px;text-align:center; color:#FFF;}
+#lockscreen_Msg.error{color:#F00;}
+#lockscreenPanel .item{width:40px; height:40px; padding:10px; float:left; background:url(images/lockscreen_btn.png) no-repeat 0 0; cursor:default;}
+#lockscreenPanel .btn_item{width:40px; height:40px;}
+#lockscreenPanel .item.now{ background-position:0 -60px;}

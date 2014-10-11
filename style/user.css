@@ -1,0 +1,131 @@
+html, body{ position:relative; width:100%; height:100%; overflow:hidden;}
+#isie6,
+#noscript,
+#loading,
+#userdesk{
+	position:absolute;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	background:url(images/user_bg.gif);
+	z-index:0;
+}
+
+#noscript{ z-index:3;}
+#isie6{z-index:2;}
+#loading{ z-index:1;}
+img.show{position:absolute; top:38.2%; left:50%; margin:-75px 0 0 -250px; width:500px; height:150px; overflow:hidden;}
+
+#input{
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin:-100px 0 0 -180px;
+	height:32px;
+	width:360px;
+	height:200px;
+	text-align:left;
+}
+#topbar{
+	text-align:right;
+	border-top:1px dashed #333;
+	margin:0 5px;
+	padding-top:5px;
+	clear:both;
+	cursor:default;
+}
+#topbar span{
+	display:inline-block;
+	padding-left:10px;
+	height:20px;
+	font:12px "宋体";
+	color:#CCC;
+	zoom:1;
+}
+#topbar span.hover,
+#topbar span.click{
+	color:#0CF;
+}
+.has_input{
+	position:relative;
+	width:170px;
+	margin:10px 5px 0 5px;
+	height:32px;
+	float:left;
+	background:url(images/user.png) no-repeat 0 0;
+}
+.has_input.email{
+	width:350px;
+	background-position:0 -35px;
+}
+.has_input input{
+	position:absolute;
+	top:0;
+	left:5px;
+	width:130px;
+	padding:10px 5px 8px;
+	height:14px;
+	line-height:14px;
+	border:0;
+	overflow:hidden;
+	z-index:2;
+	color:#CCC;
+	font-family:"Microsoft YaHei","微软雅黑",tahoma,arial,simsun,"宋体";
+}
+.has_input.email input{
+	width:310px;
+}
+.has_input .input_tips{
+	position:absolute;
+	top:0;
+	left:10px;
+	display:block;
+	height:32px;
+	line-height:32px;
+	color:#666;
+	z-index:1;
+}
+.has_input .input_btn{
+	position:absolute;
+	top:6px;
+	right:5px;
+	width:20px;
+	height:20px;
+	background:url(images/user.png) no-repeat -200px 0;
+	z-index:3;
+}
+.has_input .input_btn.hover{
+	background-position: -220px 0;
+}
+.has_input .input_btn.btn_loading,
+.has_input .input_btn.btn_loading.hover{
+	background:url(images/btn_loading.gif) no-repeat 0 0;
+}
+/***状态提示***/
+#user_msg{ display:none;width:360px;clear:both;text-align:center;padding-top:9px;height:31px;text-align:center;}
+#text{display:inline-block;height:31px;line-height:31px;color:#FFF;padding-left:31px;}
+.loading #text{background:url(images/user_loading.gif) no-repeat 0 0;}
+.error #text{background:url(images/user.png) no-repeat -350px 0;}
+.correct #text{background:url(images/user.png) no-repeat -350px -35px;}
+
+/**
+.login .relname,
+.login .email,
+.login .repassword,
+.getpassword .password,
+.getpassword .repassword,
+.newpassword .username,
+.newpassword .relname,
+.newpassword .email{
+	display:none;
+}
+
+
+.login .input_btn#login,
+.register .input_btn#register,
+.getpassword .input_btn#getpassword,
+.newpassword .input_btn#newpassword{
+	display:block;
+}
+*/

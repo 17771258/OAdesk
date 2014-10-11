@@ -1,0 +1,7 @@
+.clear{clear:both;}
+#app{width:880px;overflow:hidden;}
+#app_left{width:100px; float:left;}
+#app_right{width:780px; float:left;}
+#app_list{ height:550px; width:100px;}
+#app_content{ width:774px; position:relative; padding:0 0 0 4px; border-left:1px solid #ccc;}
+#app_list ul{ position:fixed; width:100px; top:0; left:0; background:#F00;}
